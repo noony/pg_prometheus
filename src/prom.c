@@ -404,7 +404,7 @@ prom_construct(PG_FUNCTION_ARGS)
 	TimestampTz ts = PG_GETARG_TIMESTAMPTZ(0);
 	text	   *name = PG_GETARG_TEXT_PP(1);
 	float8		value = PG_GETARG_FLOAT8(2);
-	Jsonb	   *jb = PG_GETARG_JSONB(3);
+	Jsonb *jb = PG_GETARG_JSONB_P(3);
 
 	char	   *metric_name = text_to_cstring(name);
 	PrometheusJsonbParseCtx ctx = {0};
